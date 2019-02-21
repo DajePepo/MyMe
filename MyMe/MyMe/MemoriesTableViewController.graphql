@@ -1,0 +1,20 @@
+query AllMemories {
+    allMemories {
+        ...MemoryDetails
+    }
+}
+
+fragment MemoryDetails on Memory {
+    id
+    visibility
+    latitude
+    longitude
+    contentType
+}
+
+query LoggedInUser {
+    loggedInUser {
+        id
+    }
+}
+

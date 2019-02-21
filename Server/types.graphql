@@ -1,0 +1,35 @@
+enum ContentTypeEnum {
+  TEXT
+  VIDEO
+  AUDIO
+  IMAGE
+}
+
+enum VisibilityEnum {
+  ALL
+  FRIENDS
+  ONLY_ME
+}
+
+type User @model {
+  id: ID! @isUnique
+  username: String
+  email: String
+  facebookUserId: String @isUnique
+  pictureUrl: String
+  memories: [Memory!]! @relation(name: "UserOnMemory")
+}
+
+type Memory @model {
+  id: ID! @isUnique
+  creator: User! @relation(name: "UserOnMemory")
+  visibility: VisibilityEnum!
+  latitude: Float!
+  longitude: Float!
+  contentType: ContentTypeEnum!
+  content: String!
+  creationDate: DateTime!
+  unlockingDate: DateTime
+}
+
+

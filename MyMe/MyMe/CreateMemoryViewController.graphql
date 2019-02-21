@@ -1,0 +1,34 @@
+mutation CreateMemory($creatorId: ID!,
+                      $visibility: VisibilityEnum!,
+                      $latitude: Float!,
+                      $longitude: Float!,
+                      $contentType: ContentTypeEnum!,
+                      $content: String!,
+                      $creationDate: DateTime!,
+                      $unlockingDate: DateTime) {
+    
+    createMemory(creatorId: $creatorId,
+                   visibility: $visibility,
+                   latitude: $latitude,
+                   longitude: $longitude,
+                   contentType: $contentType,
+                   content: $content,
+                   creationDate: $creationDate,
+                   unlockingDate: $unlockingDate) {
+        id
+        creationDate
+        contentType
+    }
+}
+
+mutation DeleteMemory($id: ID!) {
+    deleteMemory(id: $id) {
+        id
+    }
+}
+
+mutation AuthenticateUser($facebookToken: String!) {
+    authenticateUser(facebookToken: $facebookToken) {
+        token
+    }
+}

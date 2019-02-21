@@ -1,0 +1,27 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'MyMe' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for MyMe
+  pod 'Apollo'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+  pod 'SwiftKeychainWrapper'
+  pod 'RxSwift', '~> 4.0'
+  pod 'RxCocoa', '~> 4.0'
+  pod 'Then'
+
+  target 'MyMeTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'MyMeUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end

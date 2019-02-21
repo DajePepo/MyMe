@@ -1,0 +1,6 @@
+framework module Pods_MyMe {
+  umbrella header "Pods-MyMe-umbrella.h"
+
+  export *
+  module * { export * }
+}
